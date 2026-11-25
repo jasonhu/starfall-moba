@@ -1,0 +1,16 @@
+{
+  "Fn": "WATER_LEVEL",
+  "Wz": "RIVER_SHORE_SLOPE",
+  "mn": "MAP_GRID_HALF_EXTENT",
+  "H1": "TERRAIN_PALETTE_INDEX",
+  "Bf": "monsterRadius",
+  "Rx": "TOWER_PAD_RADIUS",
+  "Sm": "BASE_PAD_RADIUS",
+  "Cx": "MONSTER_KIND_INDEX",
+  "f3": "MAX_CAMP_COUNT",
+  "jz": "SHADOW_LENGTH_FACTOR",
+  "$1": "smoothstepClamped",
+  "o2": "polygonBounds",
+  "Er": "signedDistanceToPolygon",
+  "o_": "paintSegmentIntoGrid"
+}

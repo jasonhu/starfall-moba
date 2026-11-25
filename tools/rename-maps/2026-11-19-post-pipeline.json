@@ -1,0 +1,17 @@
+{
+  "aI": "COPY_SHADER",
+  "oI": "FULLSCREEN_ORTHO_CAMERA",
+  "lI": "fullscreenQuadGeometry",
+  "_I": "supportsFloatRenderTargets",
+  "wI": "detectGpuRendererName",
+  "MI": "detectGraphicsQuality",
+  "ju": "scratchRay",
+  "Kr": "viewDirection",
+  "kI": "groundPlane",
+  "kh": "rendererAwaitingRecycle",
+  "mx": "isWebGLContextLost",
+  "SI": "acquireRenderer",
+  "TI": "scheduleDeferredRendererRelease",
+  "EI": "releaseRenderer",
+  "AI": "deathGrayscaleCssFilter"
+}

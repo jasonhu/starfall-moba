@@ -1,0 +1,21 @@
+{
+  "yf": "buildTaperedFrustum",
+  "Dn": "FULL_TURN_RADIANS",
+  "ah": "FULL_REVOLUTION_RADIANS",
+  "x_": "ICOSPHERE_SUBDIVISION_CACHE",
+  "v8": "getSubdividedIcosphere",
+  "Ts": "buildPuffedBlobMesh",
+  "gn": "buildTubeAlongPath",
+  "Xo": "buildCrystalShard",
+  "d3": "TEAM_GATE_PALETTES",
+  "ip": "SCRATCH_GATE_MATRIX",
+  "LN": "buildGatePillar",
+  "IN": "buildGateCrystal",
+  "PN": "buildMerlon",
+  "zN": "buildWallEmblem",
+  "NN": "buildLowLamp",
+  "w_": "buildTeamGateKit",
+  "U_": "addBrazierAssembly",
+  "uF": "buildFountainRing",
+  "pF": "buildBaseDecorations"
+}

@@ -1,0 +1,23 @@
+# 依赖
+node_modules/
+
+# 系统 / 编辑器垃圾
+.DS_Store
+Thumbs.db
+._*
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# 构建与测试临时产物
+dist-release/
+tests/unit/.bundles/
+tools/.engine-bundle.cjs
+tools/.combat-core-bundle.cjs
+*.log
+*.tmp
+.cache/
+.rename-backup/
+.localname-backup/
+.docs-backup/

@@ -1,0 +1,17 @@
+{
+  "$I": "smoothStepVfx",
+  "wb": "easeOutBack",
+  "Lt": "hexToColor",
+  "ws": "HERO_VFX_PALETTES",
+  "Mb": "SHAPE_TRIANGLE_COUNTS",
+  "Fa": "triangleCountForShape",
+  "Gg": "ROCK_SHAPES",
+  "kb": "SHAPE_SEGMENT_COUNTS",
+  "GI": "VFX_LIFETIME",
+  "VI": "VFX_VERTEX_SHADER",
+  "WI": "VFX_FRAGMENT_SHADER",
+  "Ll": "applyVertexColors",
+  "Il": "resetVertexColors",
+  "jI": "buildGroundRingGeometry",
+  "qI": "buildGroundDiscGeometry"
+}

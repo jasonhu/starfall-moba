@@ -1,0 +1,8 @@
+{
+  "I2": "SKILL_SLOT_LABELS",
+  "MH": "SKILL_KEY_BINDINGS",
+  "kH": "SKILL_SLOT_KEYS",
+  "SH": "SUMMONER_SPELL_KEYS",
+  "TH": "HERO_SELECT_CSS",
+  "A4": "formatRangeLabel"
+}

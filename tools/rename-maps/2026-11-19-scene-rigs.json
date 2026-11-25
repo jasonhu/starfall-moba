@@ -1,0 +1,11 @@
+{
+  "CL": "PROJECTION_SCALE",
+  "as": "SUN_DIRECTION",
+  "mf": "SUN_GROUND_DIRECTION",
+  "KL": "SUN_HEIGHT_RATIO",
+  "fb": "CAMERA_PEEK_MAX_GROUND",
+  "jM": "disposeSceneResources",
+  "YL": "isGpuTimingEnabled",
+  "Yr": "BLUR_TEMP_SIZE",
+  "Wu": "blurImageTwice"
+}

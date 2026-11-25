@@ -1,0 +1,16 @@
+{
+  "Vi": "NAV_CELL_SIZE",
+  "ha": "NAV_CELLS_PER_UNIT",
+  "ss": "NAV_HALF_EXTENT",
+  "IV": "NAV_GOAL_TOLERANCE",
+  "PV": "NAV_HEURISTIC_WEIGHT",
+  "u6": "NAV_TRACE_STEP",
+  "Hk": "NAV_WALL_CLAMP",
+  "p6": "NAV_OBSTACLE_INFLATE",
+  "DV": "NAV_MAX_EXPANSIONS",
+  "n5": "DIAGONAL_COST",
+  "m6": "navBaseGridCache",
+  "zV": "buildNavBaseField",
+  "FV": "pointHitsAnyCircle",
+  "$k": "capsuleHitsAnyCircle"
+}

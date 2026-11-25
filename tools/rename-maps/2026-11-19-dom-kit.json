@@ -1,0 +1,16 @@
+{
+  "Jn": "expandCssUnits",
+  "Zn": "injectStyleSheet",
+  "bB": "expandColorMixFallback",
+  "_B": "preprocessCssColorMix",
+  "G8": "uToCalc",
+  "T0": "makeIconButton",
+  "V8": "makeSegmentedControl",
+  "Ar": "makeIconByName",
+  "Hs": "buildHeroPortraitIcon",
+  "zi": "refreshHud",
+  "ro": "makePanel",
+  "po": "makePanelBody",
+  "za": "makeBadge",
+  "T2": "scheduleUiUpdate"
+}

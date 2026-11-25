@@ -1,0 +1,17 @@
+{
+  "dU": "buildRiverMesh",
+  "tN": "UNIT_ATTRIBUTE_VERTEX_SHADER",
+  "eN": "UNIT_ATTRIBUTE_FRAGMENT_SHADER",
+  "nN": "UNIT_ATTRIBUTE_DECLS",
+  "CH": "HOWTO_PANEL_CSS",
+  "VF": "WATER_VERTEX_SHADER",
+  "WF": "WATER_FRAGMENT_SHADER",
+  "k4": "MISSING_ICON_PATH",
+  "S4": "WARNING_ICON_PATH",
+  "rH": "INFO_ICON_PATH",
+  "z$": "HUD_ZINDEX_CSS",
+  "DN": "buildButtress",
+  "fF": "FOG_VERTEX_SHADER",
+  "dF": "FOG_FRAGMENT_SHADER",
+  "SF": "buildArenaDecor"
+}

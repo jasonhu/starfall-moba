@@ -1,0 +1,10 @@
+{
+  "OF": "TERRAIN_VERTEX_SHADER",
+  "BF": "TERRAIN_FRAGMENT_SHADER",
+  "HF": "buildTerrainBoundary",
+  "$F": "sampleLanePath",
+  "S8": "riverFlowDirection",
+  "W_": "waterDetailLevel",
+  "n0": "fixed1",
+  "il": "TERRAIN_COLOR_INDEX"
+}

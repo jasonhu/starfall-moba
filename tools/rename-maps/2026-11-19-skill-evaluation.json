@@ -1,0 +1,14 @@
+{
+  "ze": "skillValue",
+  "k1": "skillRange",
+  "d0": "makeDash",
+  "Gi": "makeDamage",
+  "$a": "getSkillValueRaw",
+  "E0": "getCastDelay",
+  "Ck": "getCastRange",
+  "bi": "buildActionSpec",
+  "Oa": "HERO_ACTION_SPECS",
+  "Bt": "scratchPoint",
+  "Q2": "scratchPointAlt",
+  "UG": "CAST_DELAY_SCALE"
+}

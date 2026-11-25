@@ -1,0 +1,12 @@
+{
+  "$e": "makeSpriteSpec",
+  "wi": "makeRibbonSpec",
+  "os": "MAX_SPRITES",
+  "Ka": "SPRITE_STRIDE",
+  "Yu": "SPRITE_CAPACITY",
+  "KM": "RIBBON_VERTEX_SHADER",
+  "cP": "RIBBON_FRAGMENT_SHADER",
+  "fP": "RIBBON_COMPOSE_SHADER",
+  "II": "buildStagedAssets",
+  "cP": "RIBBON_FRAGMENT_SHADER"
+}

@@ -1,0 +1,12 @@
+{
+  "Vl": "GLSL_HASH_NOISE",
+  "VM": "GLSL_TIME_UNIFORM",
+  "vm": "GLSL_DITHER",
+  "If": "GLSL_SIDE_FILL",
+  "Pf": "GLSL_VERTEX_COMMON",
+  "Df": "GLSL_DEFAULT_NORMAL",
+  "zf": "GLSL_ADDITIVE",
+  "aa": "GLSL_TONEMAP",
+  "WM": "GLSL_KICK",
+  "Nf": "GLSL_LIGHT_TINT"
+}

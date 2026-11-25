@@ -1,0 +1,10 @@
+{
+  "$0": "getUnitHeight",
+  "bo": "involvesPlayer",
+  "t8": "getSkillRange",
+  "_x": "getSkillWidth",
+  "Nr": "getFirstValue",
+  "Mx": "computeFacingDirection",
+  "Ei": "facingScratch",
+  "kx": "readBuffIcons"
+}

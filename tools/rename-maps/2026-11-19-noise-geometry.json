@@ -1,0 +1,10 @@
+{
+  "yb": "makeRadialNoiseField",
+  "qu": "traceStarPath",
+  "Oc": "strokeParticle",
+  "$g": "makeParticlePainter",
+  "vb": "PARTICLE_PIXEL_SHADERS",
+  "DI": "buildParticleAtlas",
+  "gx": "PARTICLE_TONEMAP_GLSL",
+  "Bh": "configureParticleMaterial"
+}

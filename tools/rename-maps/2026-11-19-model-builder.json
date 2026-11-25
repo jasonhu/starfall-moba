@@ -1,0 +1,21 @@
+{
+  "Yo": "applyBreathingPose",
+  "sf": "DEGREES_TO_RAD",
+  "yp": "scratchColor",
+  "Lh": "toRgbChannels",
+  "Ux": "scaleRgbChannels",
+  "Xi": "clampUnit",
+  "bt": "lerpValue",
+  "Qn": "smoothStep01",
+  "rw": "modelVariantCache",
+  "wU": "buildVariant",
+  "lw": "cosineEasePow",
+  "cw": "sineEasePow",
+  "vp": "hashUnitRandom",
+  "p2": "getLodDistance",
+  "Li": "sampleColorGradient",
+  "MU": "RIBBON_WIDTH_PROFILE",
+  "bp": "emitConeSkirt",
+  "af": "emitTaperedTube",
+  "R8": "emitFurTufts"
+}

@@ -1,0 +1,158 @@
+/**
+ * 单位骨骼姿态定义
+ *
+ * 由 tools/extract-symbols.cjs 自动抽取：声明文本与顺序逐字节保留，仅做物理搬迁。
+ */
+
+import { EASING_FUNCTIONS, applyPose, parsePoseSpec, readPoseBones, spriteWorldTransform } from './fx-sprite'
+
+const DEATH_POSE_TUNING = { stride: 2.75, stance: 0.4, lift: 0.26, bob: 0.06, drop: 0.07, lean: 14, sway: 0.05, twist: 12, width: 0.16, arm: 34, elbow: 56 },
+  SWORD_GRIP_POSE = { gripR: [-0.17, 0.12, 0.32], aim: [-147, 40, -74], gripL: [0, -0.24, 0] }
+
+function applyDeathPose(heroModel) {
+  const applyPoseResult = applyPose(heroModel, null, {
+      hipsPos: [0, -0.05, 0],
+      hips: [-2, -10, 0],
+      spine: [-3, 4, 0],
+      chest: [-3, 6, 0],
+      neck: [2, 4, 0],
+      head: [0, 4, 0],
+      footL: [0.2, 0.09, 0.1, 0, 18],
+      footR: [-0.22, 0.09, -0.08, 0, -26],
+      ...SWORD_GRIP_POSE,
+    }),
+    attackLungePose = applyPose(heroModel, applyPoseResult, { hipsPos: [0.02, -0.06, -0.06], hips: [-4, -24, 0], spine: [-6, -12, 0], chest: [-8, -18, 0], head: [4, 30, 0], gripR: [-0.2, 0.2, 0.2], aim: [-150, 16, 0], gripL: [1, -0.22, 0] }),
+    attackRecoverPose = applyPose(heroModel, applyPoseResult, {
+      hipsPos: [-0.02, -0.16, 0.14],
+      hips: [12, 14, 0],
+      spine: [10, 8, 0],
+      chest: [10, 12, 0],
+      head: [-12, -18, 0],
+      footL: [0.2, 0.09, 0.34, 0, 14],
+      gripR: [0.02, 0, 0.46],
+      aim: [12, 4, 0],
+      gripL: [1, -0.22, 0],
+    }),
+    attackFinishPose = applyPose(heroModel, attackRecoverPose, { hips: [14, 20, 0], chest: [12, 16, 0], gripR: [0.08, -0.1, 0.4], aim: [28, 12, 0] }),
+    parsePoseSpecResult = parsePoseSpec([
+      [0, applyPoseResult],
+      [0.21, attackLungePose, EASING_FUNCTIONS.out],
+      [0.35, attackRecoverPose, EASING_FUNCTIONS.in3],
+      [0.5, attackFinishPose, EASING_FUNCTIONS.out],
+      [1, applyPoseResult, EASING_FUNCTIONS.io],
+    ]),
+    altAttackWindupPose = applyPose(heroModel, attackLungePose, { hipsPos: [0.02, 0, -0.1], spine: [-12, -14, 0], chest: [-14, -22, 0], gripR: [-0.16, 0.3, 0.12], aim: [-168, 18, 0] }),
+    altAttackStrikePose = applyPose(heroModel, attackRecoverPose, { hipsPos: [-0.02, -0.24, 0.18], hips: [18, 16, 0], spine: [14, 8, 0], gripR: [0.02, -0.16, 0.44], aim: [20, 4, 0] }),
+    alternateAttackAnimation = parsePoseSpec([
+      [0, applyPoseResult],
+      [0.23, altAttackWindupPose, EASING_FUNCTIONS.out],
+      [0.35, altAttackStrikePose, EASING_FUNCTIONS.in3],
+      [0.56, altAttackStrikePose, EASING_FUNCTIONS.lin],
+      [1, applyPoseResult, EASING_FUNCTIONS.io],
+    ]),
+    skillOneWindupPose = applyPose(heroModel, applyPoseResult, { hipsPos: [-0.02, -0.14, -0.04], hips: [6, 26, 0], spine: [6, 14, 0], chest: [6, 22, 0], head: [0, -34, 0], gripR: [-0.02, -0.2, 0.28], aim: [24, 150, -100], gripL: [1, -0.2, 0] }),
+    skillOneStrikePose = applyPose(heroModel, applyPoseResult, {
+      hipsPos: [0.02, -0.06, 0.12],
+      hips: [-4, -22, 0],
+      spine: [-6, -12, 0],
+      chest: [-8, -20, 0],
+      head: [6, 36, 0],
+      footL: [0.2, 0.09, 0.3, 0, 14],
+      gripR: [-0.12, 0.08, 0.42],
+      aim: [-12, -8, -105],
+      gripL: [1, -0.2, 0],
+    }),
+    skillOneFollowThroughPose = applyPose(heroModel, skillOneStrikePose, { chest: [-12, -26, 0], gripR: [-0.18, 0.2, 0.32], aim: [-46, -46, -105] }),
+    skillOneFinishPose = applyPose(heroModel, applyPoseResult, { hips: [-3, -16, 0], chest: [-6, -8, 0], head: [2, 14, 0], gripR: [-0.24, 0.2, 0.33], aim: [-126, 82, -86], gripL: [0.5, -0.2, 0] }),
+    attackBPoseTrack = parsePoseSpec([
+      [0, applyPoseResult],
+      [0.2, skillOneWindupPose, EASING_FUNCTIONS.out],
+      [0.35, skillOneStrikePose, EASING_FUNCTIONS.in3],
+      [0.5, skillOneFollowThroughPose, EASING_FUNCTIONS.out],
+      [0.76, skillOneFinishPose, EASING_FUNCTIONS.io],
+      [1, applyPoseResult, EASING_FUNCTIONS.io],
+    ]),
+    attackBWindupPose = applyPose(heroModel, applyPoseResult, {
+      hipsPos: [0.03, -0.14, -0.06],
+      hips: [2, -34, 0],
+      spine: [0, -18, 0],
+      chest: [-2, -26, 0],
+      head: [0, 56, 0],
+      footR: [-0.24, 0.09, -0.16, 0, -40],
+      gripR: [-0.3, -0.1, 0.16],
+      aim: [4, -110, 90],
+      gripL: [1, -0.2, 0],
+    }),
+    attackBStrikePose = applyPose(heroModel, applyPoseResult, {
+      hipsPos: [0, -0.18, 0.16],
+      hips: [8, 14, 0],
+      spine: [6, 10, 0],
+      chest: [6, 14, 0],
+      head: [-6, -20, 0],
+      footL: [0.22, 0.09, 0.36, 0, 10],
+      footR: [-0.22, 0.11, -0.26, 26, -30],
+      gripR: [-0.04, -0.12, 0.44],
+      aim: [8, 6, 90],
+      gripL: [1, -0.2, 0],
+    }),
+    attackBFollowThroughPose = applyPose(heroModel, attackBStrikePose, { hips: [8, 34, 0], spine: [6, 16, 0], chest: [6, 26, 0], head: [-6, -50, 0], gripR: [0.14, -0.12, 0.3], aim: [8, 104, 90] }),
+    firstSkillAnimation = parsePoseSpec([
+      [0, applyPoseResult],
+      [0.2, attackBWindupPose, EASING_FUNCTIONS.out],
+      [0.4, attackBStrikePose, EASING_FUNCTIONS.in],
+      [0.58, attackBFollowThroughPose, EASING_FUNCTIONS.out],
+      [0.74, attackBFollowThroughPose, EASING_FUNCTIONS.lin],
+      [1, applyPoseResult, EASING_FUNCTIONS.io],
+    ]),
+    carryPose = applyPose(heroModel, null, { gripR: [SWORD_GRIP_POSE.gripR[0], SWORD_GRIP_POSE.gripR[1] + 0.02, SWORD_GRIP_POSE.gripR[2]], aim: [SWORD_GRIP_POSE.aim[0] + 2, SWORD_GRIP_POSE.aim[1], SWORD_GRIP_POSE.aim[2]], gripL: [-1, 0, 0] }),
+    dashPose = applyPose(heroModel, null, {
+      hipsPos: [0, -0.2, 0.1],
+      hips: [36, -14, 0],
+      spine: [10, 6, 0],
+      chest: [6, 8, 0],
+      neck: [-20, 0, 0],
+      head: [-26, 4, 0],
+      footL: [0.14, 0.12, 0.5, -20, 0],
+      footR: [-0.14, 0.3, -0.62, 60, 0],
+      gripR: [-0.06, -0.06, 0.46],
+      aim: [6, 2, 0],
+      gripL: [1, -0.22, 0],
+    }),
+    spinPose = applyPose(heroModel, null, {
+      hipsPos: [0, -0.12, 0],
+      hips: [0, 0, 0],
+      spine: [-4, 0, 0],
+      chest: [-8, 0, 0],
+      head: [8, 0, 0],
+      footL: [0.22, 0.09, 0.06, 0, 20],
+      footR: [-0.22, 0.09, -0.06, 0, -20],
+      gripR: [-0.08, 0.06, 0.5],
+      aim: [10, 0, -90],
+      gripL: [1, -0.2, 0],
+    }),
+    channelPose = applyPose(heroModel, applyPoseResult, {
+      hipsPos: [0, -0.1, 0],
+      hips: [4, 0, 0],
+      spine: [4, 0, 0],
+      chest: [4, 0, 0],
+      head: [12, 0, 0],
+      footL: [0.2, 0.09, 0.04, 0, 14],
+      footR: [-0.2, 0.09, -0.04, 0, -18],
+      gripR: [-0.06, -0.02, 0.36],
+      aim: [-96, 0, 90],
+      gripL: [1, 0.36, 0],
+    }),
+    ultimateStrikePose = applyPose(heroModel, applyPoseResult, { hipsPos: [0, -0.16, 0], chest: [-10, -20, 0], gripR: [-0.2, 0.12, 0.3], aim: [-60, -50, -90], gripL: [1, -0.2, 0] }),
+    ultimatePoseTrack = parsePoseSpec([
+      [0, applyPoseResult],
+      [0.55, ultimateStrikePose, EASING_FUNCTIONS.out],
+      [1, spinPose, EASING_FUNCTIONS.in],
+    ]),
+    spriteWorldTransformResult = spriteWorldTransform(heroModel, applyPoseResult, {
+      limp: { gripR: [-0.3, -0.26, 0.16], aim: [30, -20, 0], gripL: [-1, 0, 0] },
+      lying: { armL: [-6, 0, 66], foreL: [-20, 0, 0], gripR: [-0.42, 0, 0.1], aim: [-4, -70, 90], gripL: [-1, 0, 0] },
+    })
+  return { stance: applyPoseResult, tmp: readPoseBones(heroModel), atkA: parsePoseSpecResult, atkB: attackBPoseTrack, atkX: alternateAttackAnimation, s1: firstSkillAnimation, carry: carryPose, dash: dashPose, spin: spinPose, channel: channelPose, ult: ultimatePoseTrack, common: spriteWorldTransformResult }
+}
+
+export { applyDeathPose, DEATH_POSE_TUNING }

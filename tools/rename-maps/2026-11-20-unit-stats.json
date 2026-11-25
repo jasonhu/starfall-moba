@@ -1,0 +1,17 @@
+{
+  "Zk": "endDash",
+  "iu": "interruptDash",
+  "py": "updateDash",
+  "w6": "pruneDeadUnits",
+  "D0": "grantGold",
+  "nm": "grantXp",
+  "_o": "recomputeStats",
+  "gW": "resetStatsScratch",
+  "vW": "updateSkillLevels",
+  "bW": "levelUpUnit",
+  "Qk": "xpShareForCount",
+  "RW": "spawnCamp",
+  "i5": "DASH_TRAIL_SLOTS",
+  "_6": "DEAD_UNIT_BUFFER",
+  "S6": "CAMP_BUFFER"
+}

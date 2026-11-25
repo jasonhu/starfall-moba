@@ -1,0 +1,23 @@
+{
+  "h4": "makeSeededRandom",
+  "LB": "fractalNoise",
+  "Kx": "makeCanvasTexture",
+  "_3": "riverNameFor",
+  "zB": "describeCampBuff",
+  "NB": "BUFF_DESCRIPTIONS",
+  "FB": "BUFF_DESCRIPTION_BUILDERS",
+  "UB": "describeMonsterBuff",
+  "OB": "describeSkillFull",
+  "Mr": "starPath",
+  "Mi": "heroIconShades",
+  "Po": "itemIconFor",
+  "Ye": "SVG_FILL_CURRENT",
+  "Ne": "SVG_STROKE_CURRENT",
+  "eH": "makeStarHudPath",
+  "Pe": "iconOutlineStroke",
+  "ik": "HUD_TEXT_SECONDARY",
+  "ak": "HUD_TEXT_MUTED",
+  "_4": "HUD_ICON_BROWN",
+  "KB": "HUD_ICON_DARK_BROWN",
+  "w4": "rectGradientDef"
+}

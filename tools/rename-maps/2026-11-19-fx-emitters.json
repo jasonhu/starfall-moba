@@ -1,0 +1,19 @@
+{
+  "vs": "emitHitSparks",
+  "bn": "emitGroundImpact",
+  "H0": "emitSparkBurst",
+  "jo": "emitGlint",
+  "L0": "emitFlashBurst",
+  "Ha": "emitDustPuff",
+  "Ni": "emitDustTrail",
+  "F0": "emitRockChips",
+  "U0": "emitShards",
+  "gf": "emitEmbers",
+  "Hh": "emitSphereGlow",
+  "Lr": "emitPillarGlow",
+  "wm": "emitHoopGlow",
+  "qo": "emitSlashGlow",
+  "Of": "emitEarthChunks",
+  "Th": "emitInkBurst",
+  "_r": "TEAM_RING_COLORS"
+}

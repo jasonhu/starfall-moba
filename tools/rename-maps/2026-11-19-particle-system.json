@@ -1,0 +1,15 @@
+{
+  "Mn": "lerpScalar",
+  "ci": "smoothStepScalar",
+  "g8": "clamp01Scalar",
+  "gs": "hashBucket",
+  "ep": "scratchVecA",
+  "cd": "scratchVecB",
+  "r_": "scratchMat3",
+  "li": "BUCKET_LOW",
+  "Ir": "BUCKET_MIN",
+  "x8": "BUCKET_MID",
+  "Ix": "BUCKET_HIGH",
+  "l_": "BUCKET_MAX",
+  "Lx": "SIGN_NEGATIVE"
+}
