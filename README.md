@@ -1,5 +1,9 @@
 # starfall-moba · 星陨战纪
 
+> # ▶ 点击在线试玩
+>
+> **[https://jasonhu.github.io/starfall-moba/](https://jasonhu.github.io/starfall-moba/)** — 打开即玩，无需安装。1 名玩家 + 9 名 AI，6 位历史人物英雄。
+
 一个 5v5 MOBA 网页游戏的可维护源码工程。
 
 把一个约 2 MB 的线上单文件 HTML 反混淆、分层、语义化，重构成 Vite + TypeScript 工程；构建产物仍是**单个自包含 HTML**（内联全部 JS/CSS），双击即可运行。
